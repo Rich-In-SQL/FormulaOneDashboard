@@ -1,0 +1,1 @@
+﻿ALTER TABLE dbo.DriversSeasons ADD CONSTRAINT FK_DriversSeasons_DriverID  FOREIGN KEY (DriverID) REFERENCES dbo.Drivers(DriverID);

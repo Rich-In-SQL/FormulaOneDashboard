@@ -1,0 +1,6 @@
+﻿CREATE TABLE dbo.DriversChampionships
+(
+	ID INT IDENTITY(1,1) NOT NULL,
+	DriverID  INT NOT NULL PRIMARY KEY,	
+	SeasonRefID INT
+)

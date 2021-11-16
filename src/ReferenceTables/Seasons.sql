@@ -1,0 +1,6 @@
+﻿CREATE TABLE Ref.Seasons
+(
+	ID INT IDENTITY(1,1) NOT NULL,
+	SeasonRefID  INT NOT NULL PRIMARY KEY,
+	Season INT
+);

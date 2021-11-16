@@ -1,3 +1,7 @@
+USE [FormulaOne];
+
+GO
+
 CREATE SCHEMA Ref;
 
 GO
@@ -45,7 +49,7 @@ CREATE TABLE dbo.Drivers
 	ID INT IDENTITY(1,1) NOT NULL,
 	DriverID INT NOT NULL PRIMARY KEY,
 	DriverName nvarchar(50),	
-	NationalityRefID INT,
+	CountryID INT,
 	RaceEntries	INT,
 	RaceStarts INT,
 	PolePositions INT,
@@ -143,3 +147,12 @@ CREATE TABLE dbo.CircuitSeasons
 CREATE THE RELATIONSHIPS 
 ****************************
 */
+
+ALTER TABLE dbo.Drivers ADD CONSTRAINT FK_Drivers_CountryID FOREIGN KEY (CountryID) REFERENCES Ref.Country(CountryID);
+
+ALTER TABLE dbo.DriversSeasons ADD CONSTRAINT FK_DriversSeasons_DriverID  FOREIGN KEY (DriverID) REFERENCES dbo.Drivers(DriverID);
+ALTER TABLE dbo.DriversSeasons ADD CONSTRAINT FK_DriversSeasons_SeasonRefID  FOREIGN KEY (SeasonRefID) REFERENCES Ref.Seasons(SeasonRefID);
+
+ALTER TABLE dbo.DriversChampionships ADD CONSTRAINT FK_DriversChampionships_DriverID  FOREIGN KEY (DriverID) REFERENCES dbo.Drivers(DriverID);
+ALTER TABLE dbo.DriversChampionships ADD CONSTRAINT FK_DriversChampionships_SeasonRefID  FOREIGN KEY (SeasonRefID) REFERENCES Ref.Seasons(SeasonRefID);
+
