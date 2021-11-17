@@ -1,0 +1,8 @@
+﻿CREATE TABLE Ref.CircuitType
+(
+	ID INT IDENTITY(1,1) NOT NULL,
+	TypeRefID INT NOT NULL,
+	CircuitType varchar(30) NOT NULL	
+)
+GO
+ALTER TABLE Ref.CircuitType ADD CONSTRAINT PK_CircuitType_TypeRefID PRIMARY KEY (TypeRefID);

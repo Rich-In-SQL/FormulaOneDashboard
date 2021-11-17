@@ -1,6 +1,0 @@
-﻿CREATE TABLE dbo.CircuitSeasons
-(
-	ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	CircuitID INT,	
-	SeasonID INT
-)

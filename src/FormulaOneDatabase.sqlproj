@@ -56,5 +56,29 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Ref\" />
+    <Folder Include="Ref\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Ref\Tables\Seasons.sql" />
+    <Build Include="Ref\Tables\Country.sql" />
+    <Build Include="Ref\Tables\CircuitType.sql" />
+    <Build Include="Ref\Tables\CircuitDirections.sql" />
+    <Build Include="dbo\Tables\Drivers.sql" />
+    <Build Include="dbo\Tables\DriversSeasons.sql" />
+    <Build Include="dbo\Tables\DriversChampionships.sql" />
+    <Build Include="dbo\Tables\Constructors.sql" />
+    <Build Include="dbo\Tables\ConstructorsSeasons.sql" />
+    <Build Include="dbo\Tables\ConstructorNationality.sql" />
+    <Build Include="dbo\Tables\Circuits.sql" />
+    <Build Include="dbo\Tables\CircuitImages.sql" />
+    <Build Include="dbo\Tables\CircuitsLocation.sql" />
+    <Build Include="dbo\Tables\CircuitSeasons.sql" />
+    <Build Include="Security\Ref.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
 </Project>
