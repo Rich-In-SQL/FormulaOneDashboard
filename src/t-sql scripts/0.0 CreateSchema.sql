@@ -159,8 +159,8 @@ CREATE TABLE dbo.CircuitsLocation
 	CircuitLocation varchar(50),
 	CountryID INT,
 	Locale varchar(50),
-	Longitude nvarchar(200),
-	Latitude nvarchar(200)
+	Longitude GEOGRAPHY,
+	Latitude GEOGRAPHY
 );
 
 ALTER TABLE dbo.CircuitsLocation ADD CONSTRAINT PK_CircuitsLocation_LocationID PRIMARY KEY (LocationID);
@@ -206,3 +206,7 @@ ALTER TABLE dbo.Constructors ADD CONSTRAINT FK_Constructors_CountryID  FOREIGN K
 
 ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT FK_CircuitSeasons_CircuitID  FOREIGN KEY (CircuitID) REFERENCES dbo.Circuits(CircuitID);
 ALTER TABLE dbo.CircuitSeasons ADD CONSTRAINT FK_CircuitSeasons_SeasonRefID  FOREIGN KEY (SeasonID) REFERENCES Ref.Seasons(SeasonRefID);
+
+
+
+
