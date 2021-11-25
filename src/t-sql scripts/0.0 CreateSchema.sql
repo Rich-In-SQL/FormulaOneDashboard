@@ -77,12 +77,26 @@ CREATE TABLE dbo.Drivers
 
 ALTER TABLE dbo.Drivers ADD CONSTRAINT PK_Drivers_DriverID PRIMARY KEY (DriverID);
 
+CREATE TABLE dbo.DriversStandings
+(
+DriverStandingID INT NOT NULL IDENTITY(1,1),
+DriverID INT,
+SeasonID INT,
+Points DECIMAL(6,2) DEFAULT 0,
+DateAdded DATETIME DEFAULT GETDATE(),
+LastUpdated DATETIME 
+);
+
+ALTER TABLE dbo.Drivers ADD CONSTRAINT PK_Drivers_ID PRIMARY KEY (DriverStandingID);
+
 CREATE TABLE dbo.DriversSeasons
 (
 	ID INT IDENTITY(1,1) NOT NULL,
 	DriverID INT NOT NULL,	
 	SeasonRefID INT
 );
+
+ALTER TABLE dbo.DriversSeasons ADD CONSTRAINT PK_DriversSeasons_ID PRIMARY KEY (ID);
 
 CREATE TABLE dbo.DriversChampionships
 (
@@ -120,6 +134,18 @@ CREATE TABLE dbo.ConstructorsSeasons
 );
 
 ALTER TABLE dbo.ConstructorsSeasons ADD CONSTRAINT PK_ConstructorsSeasons_ID PRIMARY KEY (ID);
+
+CREATE TABLE dbo.ConstructorStandings
+(
+ConstructorStandingID INT NOT NULL IDENTITY(1,1),
+ConstructorID INT,
+SeasonID INT,
+Points DECIMAL(6,2) DEFAULT 0,
+DateAdded DATETIME DEFAULT GETDATE(),
+LastUpdated DATETIME 
+);
+
+ALTER TABLE dbo.ConstructorStandings ADD CONSTRAINT PK_ConstructorStandings_ID PRIMARY KEY (ConstructorStandingID);
 
 CREATE TABLE dbo.ConstructorNationality
 (
